@@ -370,6 +370,28 @@
 </li>
 
       
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_cmd-instance_method" title="#to_cmd (instance method)">#<strong>to_cmd</strong>(cmd, args)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
     </ul>
   
 
@@ -437,18 +459,18 @@
       <pre class="lines">
 
 
-107
-108
-109
-110
-111
-112
-113
-114
-115</pre>
+115
+116
+117
+118
+119
+120
+121
+122
+123</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 115</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_set_is_echo_shell'>set_is_echo_shell</span><span class='lparen'>(</span><span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='id identifier rubyid_command_separator'>command_separator</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='ivar'>@is_echo_shell</span> <span class='kw'>unless</span> <span class='ivar'>@is_echo_shell</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
@@ -640,14 +662,6 @@
       <pre class="lines">
 
 
-132
-133
-134
-135
-136
-137
-138
-139
 140
 141
 142
@@ -660,10 +674,18 @@
 149
 150
 151
-152</pre>
+152
+153
+154
+155
+156
+157
+158
+159
+160</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 140</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shell_command_token_base'>shell_command_token_base</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='op'>=</span><span class='int'>10</span><span class='comma'>,</span> <span class='id identifier rubyid_command_separator'>command_separator</span><span class='op'>=</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
   <span class='comment'># read any pending data
@@ -706,12 +728,12 @@
       <pre class="lines">
 
 
-121
-122
-123</pre>
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 121</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shell_command_token_unix'>shell_command_token_unix</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='op'>=</span><span class='int'>10</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_shell_command_token_base'>shell_command_token_base</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -736,12 +758,12 @@
       <pre class="lines">
 
 
-117
-118
-119</pre>
+125
+126
+127</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 117</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 125</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_shell_command_token_win32'>shell_command_token_win32</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='op'>=</span><span class='int'>10</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_shell_command_token_base'>shell_command_token_base</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_timeout'>timeout</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>&amp;</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
@@ -1022,12 +1044,50 @@
 </table>
 </div>
     
+      <div class="method_details ">
+  <h3 class="signature " id="to_cmd-instance_method">
+  
+    #<strong>to_cmd</strong>(cmd, args)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/session/provider/single_command_shell.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_cmd'>to_cmd</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_platform'>platform</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>windows</span><span class='tstring_end'>&#39;</span></span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Msf.html" title="Msf (module)">Msf</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Sessions.html" title="Msf::Sessions (module)">Sessions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Sessions/CommandShellWindows.html" title="Msf::Sessions::CommandShellWindows (class)">CommandShellWindows</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_cmd'>to_cmd</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="../../../Msf.html" title="Msf (module)">Msf</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Sessions.html" title="Msf::Sessions (module)">Sessions</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../../Sessions/CommandShellUnix.html" title="Msf::Sessions::CommandShellUnix (class)">CommandShellUnix</a></span></span><span class='period'>.</span><span class='id identifier rubyid_to_cmd'>to_cmd</span><span class='lparen'>(</span><span class='id identifier rubyid_cmd'>cmd</span><span class='comma'>,</span> <span class='id identifier rubyid_args'>args</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
   </div>
 
 </div>
 
       <div id="footer">
-  Generated on Thu Sep 12 04:04:14 2024 by
+  Generated on Fri Oct  4 04:34:26 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.1.5).
 </div>

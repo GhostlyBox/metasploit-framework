@@ -320,6 +320,16 @@
         </dt>
         <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Rex.html" title="Rex (module)">Rex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Rex/Version.html" title="Rex::Version (class)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Rex/Version.html#initialize-instance_method" title="Rex::Version#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>10.0.22621.0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
       
+        <dt id="Win11_23H2-constant" class="">Win11_23H2 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Rex.html" title="Rex (module)">Rex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Rex/Version.html" title="Rex::Version (class)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Rex/Version.html#initialize-instance_method" title="Rex::Version#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>10.0.22631.0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+      
+        <dt id="Server2022_23H2-constant" class="">Server2022_23H2 =
+          
+        </dt>
+        <dd><pre class="code"><span class='const'><span class='object_link'><a href="../Rex.html" title="Rex (module)">Rex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Rex/Version.html" title="Rex::Version (class)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Rex/Version.html#initialize-instance_method" title="Rex::Version#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>10.0.25398.0</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span></pre></dd>
+      
     </dl>
   
 
@@ -633,17 +643,17 @@
       <pre class="lines">
 
 
-73
-74
 75
 76
 77
 78
 79
-80</pre>
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 73</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 75</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_major'>major</span><span class='comma'>,</span> <span class='id identifier rubyid_minor'>minor</span><span class='comma'>,</span> <span class='id identifier rubyid_build'>build</span><span class='comma'>,</span> <span class='id identifier rubyid_service_pack'>service_pack</span><span class='comma'>,</span> <span class='id identifier rubyid_revision'>revision</span><span class='comma'>,</span> <span class='id identifier rubyid_product_type'>product_type</span><span class='rparen'>)</span>
   <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid__major'>_major</span> <span class='op'>=</span> <span class='id identifier rubyid_major'>major</span>
@@ -691,12 +701,12 @@
       <pre class="lines">
 
 
-89
-90
-91</pre>
+91
+92
+93</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 89</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 91</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_build_number'>build_number</span>
   <span class='const'><span class='object_link'><a href="../Rex.html" title="Rex (module)">Rex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="../Rex/Version.html" title="Rex::Version (class)">Version</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="../Rex/Version.html#initialize-instance_method" title="Rex::Version#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__major'>_major</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__minor'>_minor</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__build'>_build</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__service_pack'>_service_pack</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -745,12 +755,12 @@
       <pre class="lines">
 
 
-107
-108
-109</pre>
+109
+110
+111</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 107</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 109</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_domain_controller?'>domain_controller?</span>
   <span class='id identifier rubyid_product_type'>product_type</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#VER_NT_DOMAIN_CONTROLLER-constant" title="Msf::WindowsVersion::VER_NT_DOMAIN_CONTROLLER (constant)">VER_NT_DOMAIN_CONTROLLER</a></span></span>
@@ -786,18 +796,18 @@
       <pre class="lines">
 
 
-112
-113
 114
 115
 116
 117
 118
 119
-120</pre>
+120
+121
+122</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 112</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 114</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_product_name'>product_name</span>
   <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown Windows version: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__major'>_major</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__minor'>_minor</span><span class='embexpr_end'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid__build'>_build</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
@@ -839,12 +849,12 @@
       <pre class="lines">
 
 
-84
-85
-86</pre>
+86
+87
+88</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 84</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 86</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_revision_number'>revision_number</span>
   <span class='id identifier rubyid__revision'>_revision</span>
@@ -869,12 +879,12 @@
       <pre class="lines">
 
 
-122
-123
-124</pre>
+124
+125
+126</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 122</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 124</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
   <span class='id identifier rubyid_product_name'>product_name</span>
@@ -923,12 +933,12 @@
       <pre class="lines">
 
 
-127
-128
-129</pre>
+129
+130
+131</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 127</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 129</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vista_or_2008?'>vista_or_2008?</span>
   <span class='id identifier rubyid_build_number'>build_number</span><span class='period'>.</span><span class='id identifier rubyid_between?'>between?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#Vista_SP0-constant" title="Msf::WindowsVersion::Vista_SP0 (constant)">Vista_SP0</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#Vista_SP2-constant" title="Msf::WindowsVersion::Vista_SP2 (constant)">Vista_SP2</a></span></span><span class='rparen'>)</span>
@@ -977,12 +987,12 @@
       <pre class="lines">
 
 
-132
-133
-134</pre>
+134
+135
+136</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 132</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 134</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_win7_or_2008r2?'>win7_or_2008r2?</span>
   <span class='id identifier rubyid_build_number'>build_number</span><span class='period'>.</span><span class='id identifier rubyid_between?'>between?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#Win7_SP0-constant" title="Msf::WindowsVersion::Win7_SP0 (constant)">Win7_SP0</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#Win7_SP1-constant" title="Msf::WindowsVersion::Win7_SP1 (constant)">Win7_SP1</a></span></span><span class='rparen'>)</span>
@@ -1031,15 +1041,15 @@
       <pre class="lines">
 
 
-94
-95
 96
 97
 98
-99</pre>
+99
+100
+101</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 94</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 96</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_windows_server?'>windows_server?</span>
   <span class='comment'># There are other types than just workstation/server/DC, but Microsoft&#39;s own documentation says
@@ -1091,12 +1101,12 @@
       <pre class="lines">
 
 
-102
-103
-104</pre>
+104
+105
+106</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 102</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 104</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_workstation?'>workstation?</span>
   <span class='id identifier rubyid_product_type'>product_type</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#VER_NT_WORKSTATION-constant" title="Msf::WindowsVersion::VER_NT_WORKSTATION (constant)">VER_NT_WORKSTATION</a></span></span>
@@ -1145,12 +1155,12 @@
       <pre class="lines">
 
 
-137
-138
-139</pre>
+139
+140
+141</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'lib/msf/core/windows_version.rb', line 139</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_xp_or_2003?'>xp_or_2003?</span>
   <span class='id identifier rubyid_build_number'>build_number</span><span class='period'>.</span><span class='id identifier rubyid_between?'>between?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="#XP_SP0-constant" title="Msf::WindowsVersion::XP_SP0 (constant)">XP_SP0</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#Server2003_SP2-constant" title="Msf::WindowsVersion::Server2003_SP2 (constant)">Server2003_SP2</a></span></span><span class='rparen'>)</span>
@@ -1165,7 +1175,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Sep 12 04:05:34 2024 by
+  Generated on Fri Oct  4 04:35:46 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.1.5).
 </div>

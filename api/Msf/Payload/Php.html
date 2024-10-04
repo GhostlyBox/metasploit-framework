@@ -513,43 +513,7 @@
 140
 141
 142
-143
-144
-145
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
-159
-160
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170
-171
-172
-173
-174
-175
-176
-177
-178
-179</pre>
+143</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'lib/msf/core/payload/php.rb', line 55</span>
@@ -571,7 +535,7 @@
   <span class='id identifier rubyid_in_array'>in_array</span>    <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>$</span><span class='tstring_end'>&#39;</span></span> <span class='op'>+</span> <span class='const'><span class='object_link'><a href="../../Rex.html" title="Rex (module)">Rex</a></span></span><span class='op'>::</span><span class='const'>Text</span><span class='period'>.</span><span class='id identifier rubyid_rand_text_alpha'>rand_text_alpha</span><span class='lparen'>(</span><span class='id identifier rubyid_rand'>rand</span><span class='lparen'>(</span><span class='int'>4</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='int'>4</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_setup'>setup</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>
-    if (FALSE !== stristr(PHP_OS, &#39;win&#39; )) {
+    if (FALSE!==stristr(PHP_OS,&#39;win&#39;)){
       </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cmd'>cmd</span><span class='embexpr_end'>}</span><span class='tstring_content'>=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_cmd'>cmd</span><span class='embexpr_end'>}</span><span class='tstring_content'>.\&quot; 2&gt;&amp;1\\n\&quot;;
     }
     </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_is_callable'>is_callable</span><span class='embexpr_end'>}</span><span class='tstring_content'>=&#39;is_callable&#39;;
@@ -636,46 +600,10 @@
     }
   </span><span class='tstring_end'>&quot;</span></span>
 
-  <span class='id identifier rubyid_exec_methods'>exec_methods</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_passthru'>passthru</span><span class='comma'>,</span> <span class='id identifier rubyid_shell_exec'>shell_exec</span><span class='comma'>,</span> <span class='id identifier rubyid_system'>system</span><span class='comma'>,</span> <span class='id identifier rubyid_exec'>exec</span><span class='comma'>,</span> <span class='id identifier rubyid_proc_open'>proc_open</span><span class='comma'>,</span> <span class='id identifier rubyid_popen'>popen</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='id identifier rubyid_rand'>rand</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_exec_methods'>exec_methods</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_passthru'>passthru</span><span class='comma'>,</span> <span class='id identifier rubyid_shell_exec'>shell_exec</span><span class='comma'>,</span> <span class='id identifier rubyid_system'>system</span><span class='comma'>,</span> <span class='id identifier rubyid_exec'>exec</span><span class='comma'>,</span> <span class='id identifier rubyid_proc_open'>proc_open</span><span class='comma'>,</span> <span class='id identifier rubyid_popen'>popen</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_exec_methods'>exec_methods</span> <span class='op'>=</span> <span class='id identifier rubyid_exec_methods'>exec_methods</span><span class='period'>.</span><span class='id identifier rubyid_shuffle'>shuffle</span>
   <span class='id identifier rubyid_buf'>buf</span> <span class='op'>=</span> <span class='id identifier rubyid_setup'>setup</span> <span class='op'>+</span> <span class='id identifier rubyid_exec_methods'>exec_methods</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_fail_block'>fail_block</span>
-  <span class='comment'>#buf = Rex::Text.compress(buf)
-</span>
-  <span class='comment'>###
-</span>  <span class='comment'># All of this junk should go in an encoder
-</span>  <span class='comment'>#
-</span>  <span class='comment'># Replace all single-quoted strings with quoteless equivalents, e.g.:
-</span>  <span class='comment'>#    echo(&#39;asdf&#39;);
-</span>  <span class='comment'># becomes
-</span>  <span class='comment'>#    echo($a.$s.$d.$f);
-</span>  <span class='comment'># and add &quot;$a=chr(97);&quot; et al to the top of the block
-</span>  <span class='comment'>#
-</span>  <span class='comment'># Once this is complete, it is guaranteed that there are no spaces
-</span>  <span class='comment'># inside strings.  This combined with the fact that there are no
-</span>  <span class='comment'># function definitions, which require a space between the &quot;function&quot;
-</span>  <span class='comment'># keyword and the name, means we can completely remove spaces.
-</span>  <span class='comment'>#
-</span>  <span class='comment'>#alpha_used = { 95 }
-</span>  <span class='comment'>#buf.gsub!(/&#39;(.*?)&#39;/) {
-</span>  <span class='comment'>#	str_array = []
-</span>  <span class='comment'>#	$1.each_byte { |c|
-</span>  <span class='comment'>#		if ((&#39;a&#39;..&#39;z&#39;).include?(c.chr))
-</span>  <span class='comment'>#			alpha_used[c] = 1
-</span>  <span class='comment'>#			str_array &lt;&lt; &quot;$#{c.chr}.&quot;
-</span>  <span class='comment'>#		else
-</span>  <span class='comment'>#			str_array &lt;&lt; &quot;chr(#{c}).&quot;
-</span>  <span class='comment'>#		end
-</span>  <span class='comment'>#	}
-</span>  <span class='comment'>#	str_array.last.chop!
-</span>  <span class='comment'>#	str_array.join(&quot;&quot;)
-</span>  <span class='comment'>#}
-</span>  <span class='comment'>#if (alpha_used.length &gt; 1)
-</span>  <span class='comment'>#	alpha_used.each_key { |k| buf = &quot;$#{k.chr}=chr(#{k});&quot; + buf }
-</span>  <span class='comment'>#end
-</span>  <span class='comment'>#
-</span>  <span class='comment'>#buf.gsub!(/\s*/, &#39;&#39;)
-</span>  <span class='comment'>#
-</span>  <span class='comment'>###
-</span>
+
   <span class='kw'>return</span> <span class='id identifier rubyid_buf'>buf</span>
 
 <span class='kw'>end</span></pre>
@@ -689,7 +617,7 @@
 </div>
 
       <div id="footer">
-  Generated on Thu Sep 12 04:01:36 2024 by
+  Generated on Fri Oct  4 04:31:53 2024 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.36 (ruby-3.1.5).
 </div>
